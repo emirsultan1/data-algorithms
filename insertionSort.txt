@@ -1,0 +1,43 @@
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+class HelloWorld {
+    public static void main(String[] args) {
+
+/*insertion sort::
+
+this sorting algorithm bascially compares right element to left and does that over through the whole array.
+*/
+
+
+        int array[] = {9 , 1 , 8 , 2 , 7 , 3 , 6 , 5 , 4};
+        insertionSort(array);
+        
+        for(int i : array){
+            
+            System.out.print(i + " ");
+        }
+
+        }
+        
+    private static void insertionSort(int array[]){
+        //i must begin at 1-->
+        for(int i = 1; i < array.length; i++){
+            //place value of i in a temporary value named temp;
+            int temp = array[i];
+            //this j value is comparing whatever value we are comparing to the left of i
+            int j = i -1;
+            while(j >= 0 && array[j] > temp){
+                //this basically shifts an element to the right.
+                array[j + 1] = array[j];
+                //this decramentation basically goes through the array checking all the array
+                j--;
+                
+            }
+            array[j + 1] = temp;
+        }
+        
+    }
+
+    }

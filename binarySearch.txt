@@ -1,0 +1,66 @@
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+class HelloWorld {
+    public static void main(String[] args) {
+
+//binary search algorithm
+//find lowest and highest indexes
+//also finds m which is middle
+//middle is then compared to the index in which we are looking for.
+//for this searching algorithm the array must be sorted
+
+
+    //space allocation
+    int[] array = new int[100];    
+    int target = 42;
+    
+    for(int i = 0; i < array.length; i++){
+        
+        array[i] = i;
+        
+    }
+    int index = binarySearch(array , target);
+    
+    if(index == -1){
+        System.out.println("element not found");
+        
+    }else{
+        
+        System.out.println("element found!!!");
+    }
+    
+
+        }
+        
+    private static int binarySearch(int[] array , int target){
+        
+        int low = 0;
+        int high = array.length - 1;
+        
+        while (low <= high){
+            //this formula was provided in the labs 
+            // we create middle in the while loop since midle always changes when we cut the array.
+            int middle = low + (high - low)/2;
+            //this value will extract that value found within the element
+            int value = array[middle];
+            
+            //optional part counting amount of steps it takes to find the target.
+            System.out.println("middle: " + value);
+            
+            if(value < target) low = middle + 1;
+            else if(value > target) high = middle - 1;
+            else return middle;//target found
+                
+
+            
+            
+            
+        }
+        
+        //target not found
+        return -1;
+    }   
+        
+    }

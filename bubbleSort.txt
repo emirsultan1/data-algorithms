@@ -1,0 +1,40 @@
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+class HelloWorld {
+    public static void main(String[] args) {
+
+//bubble sort::
+/* bubble sort compares adjascent elements and sees which one is larger. if the right element(compared to its left) is smaller you switch the elements. this will eveltually lead to habing the largest number at the end in the first iteration.
+bubble sort , insertion sort and selection sort all have a n^2 runtime 
+*/
+
+    int array[] = {9 , 1 , 8 , 2 , 7 , 3 , 6 , 4 , 5};
+    bubbleSort(array);
+   for (int i = 0; i < array.length; i++){
+       System.out.print(array[i] + " ");
+       
+   }
+
+
+        }
+        
+   
+    private static void bubbleSort(int array[]){
+        
+        // this for loop ensures that we comapre the last two elements thats why its length -1.
+        for(int i = 0; i < array.length - 1; i++){
+            // - i here account for the parts that get sorted
+            for(int j = 0; j < array.length - i - 1; j++){
+                if(array[j] > array[j + 1]){
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j+ 1] = temp; 
+                    
+                }
+            }
+        }    
+        
+    }   
+    }
