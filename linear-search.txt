@@ -1,0 +1,42 @@
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+class HelloWorld {
+    public static void main(String[] args) {
+
+//linear search (easy)
+//runtime --> 0(n) --> linear
+//bad for large data sets.
+//also note that the array does not have to be in order. CAN BE NOT SORTED
+
+    int[] array = {9 , 1 , 8 , 2 , 7 , 3 , 6 , 4 , 5};
+
+    int index = linearSearch(array , 1);
+    
+    if(index != -1){
+        
+        System.out.print("element found!!!!");
+        
+    }else{
+        System.out.print("element NOT found");    
+        
+    }
+    
+
+        }
+        
+    private static int linearSearch(int[] array , int value){
+        
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == value){
+                
+                return i;
+            }
+            
+        }
+        // return -1 as a sentinal value
+        return -1;
+    }    
+        
+    }
